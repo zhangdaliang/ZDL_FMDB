@@ -15,8 +15,9 @@
     if (self) {
         self.userName=[node objectForKey:@"newsID"];
         self.text=[node objectForKey:@"title"];
-        self.imageUrl=[[[node objectForKey:@"images"] lastObject] objectForKey:@"url"];
-        
+        NSString *urlStr=[[[node objectForKey:@"images"] lastObject] objectForKey:@"url"];
+        NSURL *imageUrl=[NSURL URLWithString:urlStr];
+        self.imageData=[NSData dataWithContentsOfURL:imageUrl];
     }
     return self;
 }

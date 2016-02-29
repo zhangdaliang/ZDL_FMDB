@@ -62,7 +62,8 @@
         cell=[[UITableViewCell alloc]initWithStyle:(UITableViewCellStyleSubtitle) reuseIdentifier:@"zz"];
     }
     ZdlModel *model=[_dataArr objectAtIndex:indexPath.row];
-    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:model.imageUrl]];
+    
+    cell.imageView.image=[UIImage imageWithData:model.imageData];
     cell.textLabel.text=model.userName;
     cell.detailTextLabel.text=model.text;
     return cell;

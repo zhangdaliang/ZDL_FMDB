@@ -10,7 +10,7 @@
 
 @interface ZdlModel : NSObject
 @property(nonatomic,strong)NSString *userName;
-@property(nonatomic,strong)NSString *imageUrl;
+@property(nonatomic,strong)NSData *imageData;
 @property(nonatomic,strong)NSString *text;
 -(instancetype)initWithJson:(id)node;
 @end
